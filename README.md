@@ -1,6 +1,6 @@
 # Imbokodo Rides
 
-Foobar is a Python library for dealing with word pluralization.
+Women themed e-hailing ride application.
 
 ## Installation
 Ensure that you have the following installed to run the project: vs code, android studio and an emulator.
