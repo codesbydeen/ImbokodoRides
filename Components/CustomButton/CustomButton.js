@@ -1,11 +1,21 @@
 import React from "react"
-import {View, Text} from "react-native"
+import {View, Text, StyleSheet} from "react-native"
 
 const CustomButton = () => {
     return(
-        <View>
-            <Text>Button</Text>
+        <View style = {styles.container}>
+            <Text style = {styles.text}>Button</Text>
         </View>
-    )
-}
-export default CustomButton
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#800080",
+    },
+    text: {},
+
+
+});
+
+export default CustomButton;
