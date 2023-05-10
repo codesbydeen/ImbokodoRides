@@ -17,8 +17,12 @@ const styles = StyleSheet.create({
         padding: 15,
         marginVertical: 5,
         alignItems: "center",
+        borderRadius: 5,
     },
-    text: {},
+    text: {
+        fontWeight: "bold",
+        color:"white",
+    },
 
 
 });
