@@ -1,12 +1,17 @@
 import React from "react"
-import {View, Text} from "react-native"
+import {View, Text, TextInput, StyleSheet} from "react-native"
 
 const CustomInput = () => {
     return(
-        <View>
-            <Text>Custom Input</Text>
+        <View style = {styles.container}>
+            <TextInput placeholder="placeholder" style = {styles.input}/>
         </View>
-    )
-}
+    );
+};
 
-export default CustomInput
+const styles = StyleSheet.create({
+    container: {},
+    input: {},
+});
+
+export default CustomInput;
