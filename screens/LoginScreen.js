@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View, Text, StyleSheet, TextInput} from "react-native";
 import CustomInput from "../Components/CustomInput/CustomInput";
-
+import CustomButton from "../Components/CustomButton/CustomButton";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
@@ -13,6 +13,7 @@ const LoginScreen = () => {
     <CustomInput placeholder= "Username" value = {username} setValue={setUsername} />
     <CustomInput placeholder= "Password" value = {password} setValue={setPassword} secureTextEntry/>
     
+    <CustomButton/>
     </View>
   );
 
