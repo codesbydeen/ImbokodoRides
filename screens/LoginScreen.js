@@ -12,7 +12,7 @@ const LoginScreen = () => {
 
     <CustomInput placeholder= "Username" value = {username} setValue={setUsername} />
     <CustomInput placeholder= "Password" value = {password} setValue={setPassword} secureTextEntry/>
-    
+    <CustomButton/>
     <CustomButton/>
     </View>
   );
