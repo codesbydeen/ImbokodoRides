@@ -74,8 +74,7 @@ const onLoginWithGooglePress = () => {
     <CustomButton 
     text = "Login with Google" 
     onPress={ onLoginWithGooglePress}/>
-    bgColor = "#FAE6FA"
-    fgColor = "#800080"
+    
     </View>
     
     );
