@@ -13,7 +13,7 @@ const onLoginPress = () => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style = {styles.title}>Create an Account</Text>
+      <Text style = {styles.title}>Login</Text>
 
     <CustomInput 
     placeholder= "Username" 
