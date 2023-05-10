@@ -13,7 +13,7 @@ const onLoginPress = () => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-  
+      <Text style = {styles.title}>Create an Account</Text>
 
     <CustomInput 
     placeholder= "Username" 
@@ -38,8 +38,17 @@ const styles = StyleSheet.create({
   root:{
     flex: 1,
     backgroundColor: "#ffffff"
+  },
+  title:{
+    fontSize: 24,
+    fontWeight: "bold",
+    fontColor: "#051C60",
+    margin : 10,
   }
-})
+
+
+
+});
 
 
 export default LoginScreen;
