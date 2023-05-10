@@ -51,6 +51,10 @@ const onLoginPress = () => {
     />
    
     <CustomButton text = "Create Account" onPress={ onLoginPress}/>
+
+    <Text style ={styles.text}>OR</Text>
+
+
     </View>
     
     );
@@ -68,9 +72,14 @@ const styles = StyleSheet.create({
     fontColor: "#051C60",
     margin : 10,
     textAlign: "center",
-  }
+  },
 
-
+text:{
+  fontSize:20,
+  alignItems: "center",
+  fontColor: "black",
+  
+}
 
 });
 
