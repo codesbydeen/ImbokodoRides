@@ -9,6 +9,11 @@ const LoginScreen = () => {
   const [password, setPassword] = useState(" ");
   const [passwordConfirm, setPasswordConfirm] = useState(" ");
 
+
+  const onCreateAccountPress = () => {
+    console.warn("Create");
+  }
+
 const onLoginPress = () => {
   console.warn("Login");
 }
@@ -50,13 +55,13 @@ const onLoginPress = () => {
     secureTextEntry
     />
    
-    <CustomButton text = "Create Account" onPress={ onLoginPress}/>
+    <CustomButton text = "Create Account" onPress={ onCreateAccountPress}/>
 
     <Text style ={styles.text}>OR</Text>
 
     <Text style ={styles.text2}>You already have an account?</Text>
 
-
+    <CustomButton text = "Login" onPress={ onLoginPress}/>
     </View>
     
     );
