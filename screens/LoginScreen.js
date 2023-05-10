@@ -4,8 +4,8 @@ import CustomInput from "../Components/CustomInput/CustomInput";
 import CustomButton from "../Components/CustomButton/CustomButton";
 
 const LoginScreen = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(" ");
+  const [password, setPassword] = useState(" ");
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
   
