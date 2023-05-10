@@ -5,7 +5,9 @@ import CustomButton from "../Components/CustomButton/CustomButton";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState(" ");
+  const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
+  const [passwordConfirm, setPasswordConfirm] = useState(" ");
 
 const onLoginPress = () => {
   console.warn("Login");
@@ -13,17 +15,31 @@ const onLoginPress = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
-      <Text style = {styles.title}>Login</Text>
+      <Text style = {styles.title}>Create an Account</Text>
 
     <CustomInput 
     placeholder= "Username" 
     value = {username} 
     setValue={setUsername} 
     />
+
+<CustomInput 
+    placeholder= "Email" 
+    value = {email} 
+    setValue={setEmail} 
+    />
+
     <CustomInput 
     placeholder= "Password" 
     value = {password} 
     setValue={setPassword} 
+    secureTextEntry
+    />
+
+<CustomInput 
+    placeholder= " ConfirmPassword" 
+    value = {passwordConfirm} 
+    setValue={setPasswordConfirm} 
     secureTextEntry
     />
    
@@ -44,6 +60,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontColor: "#051C60",
     margin : 10,
+    textAlign: "center",
   }
 
 
