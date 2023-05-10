@@ -30,7 +30,7 @@ const onLoginPress = () => {
     />
 
     <CustomInput 
-    placeholder= "Password" 
+    placeholder= "Password"
     value = {password} 
     setValue={setPassword} 
     secureTextEntry
@@ -43,7 +43,7 @@ const onLoginPress = () => {
     secureTextEntry
     />
    
-    <CustomButton text = "Login" onPress={ onLoginPress}/>
+    <CustomButton text = "Create Account" onPress={ onLoginPress}/>
     </View>
     
   );
