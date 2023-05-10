@@ -1,11 +1,11 @@
 import React from "react"
-import {View, Text, StyleSheet} from "react-native"
+import {View, Text, StyleSheet, Pressable} from "react-native"
 
-const CustomButton = () => {
+const CustomButton = ({onPress, text}) => {
     return(
-        <View style = {styles.container}>
-            <Text style = {styles.text}>Button</Text>
-        </View>
+        <Pressable onPress = {onPress} style = {styles.container}>
+            <Text style = {styles.text}>{text}</Text>
+        </Pressable>
     );
 };
 
