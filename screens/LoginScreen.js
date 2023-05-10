@@ -18,6 +18,10 @@ const onLoginPress = () => {
   console.warn("Login");
 }
 
+const onLoginWithGooglePress = () => {
+  console.warn("onLoginWithGoogle");
+}
+
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
       <Text style = {styles.title}>Create your Account</Text>
@@ -55,13 +59,23 @@ const onLoginPress = () => {
     secureTextEntry
     />
    
-    <CustomButton text = "Create Account" onPress={ onCreateAccountPress}/>
+    <CustomButton 
+    text = "Create Account" 
+    onPress={ onCreateAccountPress}/>
 
     <Text style ={styles.text}>OR</Text>
 
     <Text style ={styles.text2}>You already have an account?</Text>
 
-    <CustomButton text = "Login" onPress={ onLoginPress}/>
+    <CustomButton 
+    text = "Login" 
+    onPress={ onLoginPress}/>
+
+    <CustomButton 
+    text = "Login with Google" 
+    onPress={ onLoginWithGooglePress}/>
+    bgColor = "#FAE6FA"
+    fgColor = "#800080"
     </View>
     
     );
