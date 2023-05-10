@@ -54,6 +54,8 @@ const onLoginPress = () => {
 
     <Text style ={styles.text}>OR</Text>
 
+    <Text style ={styles.text2}>You already have an account?</Text>
+
 
     </View>
     
@@ -76,9 +78,15 @@ const styles = StyleSheet.create({
 
 text:{
   fontSize:20,
-  alignItems: "center",
+  fontWeight: "bold",
+  textAlign: "center",
   fontColor: "black",
-  
+
+},
+
+text2:{
+  textAlign: "center",
+  fontColor: "black",
 }
 
 });
