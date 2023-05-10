@@ -18,12 +18,14 @@ const onLoginPress = () => {
       <Text style = {styles.title}>Create your Account</Text>
     
     <Text>Username</Text>
-    
+
     <CustomInput 
     placeholder= "Username" 
     value = {username} 
     setValue={setUsername} 
     />
+
+    <Text>Email</Text>
 
 <CustomInput 
     placeholder= "Email" 
@@ -31,6 +33,7 @@ const onLoginPress = () => {
     setValue={setEmail} 
     />
 
+    <Text>Password</Text>
     <CustomInput 
     placeholder= "Password"
     value = {password} 
@@ -38,8 +41,10 @@ const onLoginPress = () => {
     secureTextEntry
     />
 
+    <Text>Confirm Password</Text>
+
 <CustomInput 
-    placeholder= " ConfirmPassword" 
+    placeholder= "ConfirmPassword" 
     value = {passwordConfirm} 
     setValue={setPasswordConfirm} 
     secureTextEntry
@@ -48,8 +53,8 @@ const onLoginPress = () => {
     <CustomButton text = "Create Account" onPress={ onLoginPress}/>
     </View>
     
-  );
-
+    );
+     
 };
 
 const styles = StyleSheet.create({
