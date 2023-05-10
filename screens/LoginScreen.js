@@ -105,6 +105,7 @@ text:{
 text2:{
   textAlign: "center",
   fontColor: "black",
+  
 }
 
 });
