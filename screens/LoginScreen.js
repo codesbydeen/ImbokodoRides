@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
 
     text1:{
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: "600",
         textAlign: "center",
         margin: 10,
@@ -40,7 +40,9 @@ const styles = StyleSheet.create({
 
     text2: {
         textAlign: "center",
-        margin: 5,
+        fontWeight: "400",
+        fontSize: 20,
+        margin: 10,
     }
 
 

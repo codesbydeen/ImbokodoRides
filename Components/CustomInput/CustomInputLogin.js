@@ -11,11 +11,13 @@ const CustomInputLogin = ({value, setValue, placeholder, secureTextEntry}) => {
  const styles = StyleSheet.create({
     container: {
         backgroundColor: "white",
-        width: "100%",
+        width: "75%",
 
         borderRadius: 5,
         borderWidth:1,
         paddingHorizontal:10,
+        margin: 20,
+        alignSelf: "center",
     },
     input: {},
  });

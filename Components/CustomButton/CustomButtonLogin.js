@@ -19,10 +19,11 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#800080",
 
-        width: "100%",
+        width: "75%",
         padding: 15,
         marginVertical: 5,
         alignItems: "center",
+        alignSelf: "center",
         borderRadius: 5,
         
     },
