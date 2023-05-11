@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    fontColor: "#051C60",
+    color: "#051C60",
     margin: 10,
     textAlign: "center",
   },
@@ -84,12 +84,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    fontColor: "black",
+    color: "black",
   },
 
   text2: {
     textAlign: "center",
-    fontColor: "black",
+    color: "black",
   },
 });
 
