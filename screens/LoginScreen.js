@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { View, Text, StyleSheet, TextInput} from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 import CustomInput from "../Components/CustomInput/CustomInput";
 import CustomButton from "../Components/CustomButton/CustomButton";
 
@@ -9,106 +9,88 @@ const LoginScreen = () => {
   const [password, setPassword] = useState(" ");
   const [passwordConfirm, setPasswordConfirm] = useState(" ");
 
-
   const onCreateAccountPress = () => {
     console.warn("Create");
-  }
+  };
 
-const onLoginPress = () => {
-  console.warn("Login");
-}
+  const onLoginPress = () => {
+    console.warn("Login");
+  };
 
-const onLoginWithGooglePress = () => {
-  console.warn("onLoginWithGoogle");
-}
+  const onLoginWithGooglePress = () => {
+    console.warn("onLoginWithGoogle");
+  };
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
-      <Text style = {styles.title}>Create your Account</Text>
-    
-    <Text>Username</Text>
+      <Text style={styles.title}>Create your Account</Text>
 
-    <CustomInput 
-    placeholder= "Username" 
-    value = {username} 
-    setValue={setUsername} 
-    />
+      <Text>Username</Text>
 
-    <Text>Email</Text>
+      <CustomInput
+        placeholder="Username"
+        value={username}
+        setValue={setUsername}
+      />
 
-<CustomInput 
-    placeholder= "Email" 
-    value = {email} 
-    setValue={setEmail} 
-    />
+      <Text>Email</Text>
 
-    <Text>Password</Text>
-    <CustomInput 
-    placeholder= "Password"
-    value = {password} 
-    setValue={setPassword} 
-    secureTextEntry
-    />
+      <CustomInput placeholder="Email" value={email} setValue={setEmail} />
 
-    <Text>Confirm Password</Text>
+      <Text>Password</Text>
+      <CustomInput
+        placeholder="Password"
+        value={password}
+        setValue={setPassword}
+        secureTextEntry
+      />
 
-<CustomInput 
-    placeholder= "ConfirmPassword" 
-    value = {passwordConfirm} 
-    setValue={setPasswordConfirm} 
-    secureTextEntry
-    />
-   
-    <CustomButton 
-    text = "Create Account" 
-    onPress={ onCreateAccountPress}/>
+      <Text>Confirm Password</Text>
 
-    <Text style ={styles.text}>OR</Text>
+      <CustomInput
+        placeholder="ConfirmPassword"
+        value={passwordConfirm}
+        setValue={setPasswordConfirm}
+        secureTextEntry
+      />
 
-    <Text style ={styles.text2}>You already have an account?</Text>
+      <CustomButton text="Create Account" onPress={onCreateAccountPress} />
 
-    <CustomButton 
-    text = "Login" 
-    onPress={ onLoginPress}/>
+      <Text style={styles.text}>OR</Text>
 
-    <CustomButton 
-    text = "Login with Google" 
-    onPress={ onLoginWithGooglePress}/>
-    
+      <Text style={styles.text2}>You already have an account?</Text>
+
+      <CustomButton text="Login" onPress={onLoginPress} />
+
+      <CustomButton text="Login with Google" onPress={onLoginWithGooglePress} />
     </View>
-    
-    );
-     
+  );
 };
 
 const styles = StyleSheet.create({
-  root:{
+  root: {
     flex: 1,
-    backgroundColor: "#ffffff"
+    backgroundColor: "#ffffff",
   },
-  title:{
+  title: {
     fontSize: 24,
     fontWeight: "bold",
     fontColor: "#051C60",
-    margin : 10,
+    margin: 10,
     textAlign: "center",
   },
 
-text:{
-  fontSize:20,
-  fontWeight: "bold",
-  textAlign: "center",
-  fontColor: "black",
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    fontColor: "black",
+  },
 
-},
-
-text2:{
-  textAlign: "center",
-  fontColor: "black",
-  
-}
-
+  text2: {
+    textAlign: "center",
+    fontColor: "black",
+  },
 });
-
 
 export default LoginScreen;
