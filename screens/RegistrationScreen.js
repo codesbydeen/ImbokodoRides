@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { View, Text, StyleSheet, TextInput} from "react-native";
-import CustomInput from "../Components/CustomInput/CustomInput";
+import CustomInput from "../Components/CustomInput/CustomInputRegistration";
 import CustomButton from "../Components/CustomButton/CustomButton";
 
 const RegistrationScreen = () => {
