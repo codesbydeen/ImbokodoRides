@@ -2,6 +2,14 @@
 
 Women themed e-hailing ride application.
 
+## Pulling Changes
+
+Always run this command to get the latest changes from the master branch:
+
+```bash
+git pull origin Master
+```
+
 ## Setting Up Project
 
 1. Open your desktop on your pc files
