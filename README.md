@@ -7,7 +7,7 @@ Women themed e-hailing ride application.
 Always run this command to get the latest changes from the master branch:
 
 ```bash
-git pull origin Master
+git pull origin master
 ```
 
 ## Setting Up Project
