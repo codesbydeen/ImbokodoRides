@@ -4,7 +4,9 @@ import {View, Text, TextInput, StyleSheet} from "react-native"
 const CustomInputLogin = ({value, setValue, placeholder, secureTextEntry}) => {
     return(
         <View style = {styles.container}>
-            <TextInput placeholder = "placeholder" style = {styles.input}/>
+            <TextInput 
+            placeholder = "+27" 
+            style = {styles.input}/>
         </View>
     );
 };

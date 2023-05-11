@@ -10,6 +10,7 @@ const LoginScreen = () => {
             <Text style = {styles.title1}>Login</Text>
 
         <Text style = {styles.text1}>Welcome back!</Text>
+        <Text style = {styles.text3}>Let's get you logged In</Text>
         <Text style = {styles.text2}>Enter in your phone number below:</Text>
             <CustomInput/>
 
@@ -35,13 +36,19 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: "600",
         textAlign: "center",
-        margin: 10,
+        margin: 5,
     },
 
     text2: {
         textAlign: "center",
         fontWeight: "400",
         fontSize: 20,
+        margin: 5,
+    },
+
+    text3: {
+        fontSize: 20,
+        textAlign: "center",
         margin: 10,
     }
 
