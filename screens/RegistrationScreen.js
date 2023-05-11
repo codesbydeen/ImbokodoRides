@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput} from "react-native";
 import CustomInput from "../Components/CustomInput/CustomInput";
 import CustomButton from "../Components/CustomButton/CustomButton";
 
-const LoginScreen = () => {
+const RegistrationScreen = () => {
   const [username, setUsername] = useState(" ");
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
@@ -111,4 +111,4 @@ text2:{
 });
 
 
-export default LoginScreen;
+export default RegistrationScreen;
