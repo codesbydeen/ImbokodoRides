@@ -2,6 +2,14 @@
 
 Women themed e-hailing ride application.
 
+## Pulling Changes
+
+Always run this command to get the latest changes from the master branch:
+
+```bash
+git pull origin master
+```
+
 ## Setting Up Project
 
 1. Open your desktop on your pc files
@@ -34,10 +42,7 @@ npx expo start
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Please do not merge any changes to the master branch as this will cause conflict errors, work on your assigned branch and I will frequently update the master branch and merge all branches.
 
 ## Figma Design
 
