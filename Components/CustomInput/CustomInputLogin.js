@@ -9,7 +9,14 @@ const CustomInputLogin = ({value, setValue, placeholder, secureTextEntry}) => {
     );
 };
  const styles = StyleSheet.create({
-    container: {},
+    container: {
+        backgroundColor: "white",
+        width: "100%",
+
+        borderRadius: 5,
+        borderWidth:1,
+        paddingHorizontal:10,
+    },
     input: {},
  });
 
