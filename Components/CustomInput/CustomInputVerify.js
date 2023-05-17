@@ -5,7 +5,7 @@ const CustomInputVerify = ({value, setValue, placeholder, secureTextEntry}) => {
     return(
         <View style = {styles.container}>
             <TextInput 
-            placeholder = "+27" 
+            placeholder = "__ __ __ __" 
             style = {styles.input}/>
         </View>
     );
