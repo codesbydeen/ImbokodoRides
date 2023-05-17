@@ -10,7 +10,7 @@ const VerificationScreen = () => {
             <Text style = {styles.title}>Verification</Text>
 
         <Text style = {styles.text4}>We will send a One Time Password via SMS</Text>
-        <Text style = {styles.text5}></Text>
+        
        
             <CustomInput/>
 
@@ -37,18 +37,7 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         textAlign: "center",
         margin: 5,
-    },
-
-
-    text5: {
-        fontSize: 20,
-        textAlign: "center",
-        margin: 10,
     }
-
-
-
-
 
 
 });

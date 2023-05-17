@@ -1,7 +1,7 @@
 import React from "react"
 import {View, Text, TextInput, StyleSheet} from "react-native"
 
-const CustomInputVerify = ({value, setValue, placeholder, secureTextEntry}) => {
+const CustomInputVerify = ({value, setValue, placeholder}) => {
     return(
         <View style = {styles.container}>
             <TextInput 
