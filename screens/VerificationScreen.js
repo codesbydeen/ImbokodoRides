@@ -1,5 +1,7 @@
 import React from "react"
 import {View, Text, StyleSheet} from "react-native"
+import CustomInput from "../Components/CustomInput/CustomInputVerify"
+import CustomButton from "../Components/CustomButton/CustomButtonVerify";
 
 const VerificationScreen = () => {
     return(
@@ -8,7 +10,7 @@ const VerificationScreen = () => {
             <Text style = {styles.title}>Verification</Text>
 
         <Text style = {styles.text4}>We will send a One Time Password via SMS</Text>
-        <Text style = {styles.text5}>We will send a One Time Password via SMS</Text>
+        <Text style = {styles.text5}></Text>
        
             <CustomInput/>
 
