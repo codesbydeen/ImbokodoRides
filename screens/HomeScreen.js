@@ -1,61 +1,93 @@
-import React, { useState } from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { Marker, Callout, Circle } from "react-native-maps";
+import MapView from "react-native-maps/lib/MapView";
 
 const HomeScreen = () => {
-  const [pickUpLocation, setPickUpLocation] = useState("");
-  const [dropOffLocation, setDropOffLocation] = useState("");
-  const [markerCoordinates, setMarkerCoordinates] = useState("");
-
-  const handlePickUpLocationChange = (text) => {
-    setPickUpLocation(text);
-  };
-
-  const handleDropOffLocationChange = (text) => {
-    setDropOffLocation(text);
-  };
-
-  const handleSearch = () => {
-    // Implement your search logic here
-    // You can use the pickUpLocation and dropOffLocation values
-    // to fetch location coordinates or perform any other necessary tasks
-
-    // For demonstration purposes, let's assume we receive coordinates
-    const coordinates = {
-      latitude: 37.78825,
-      longitude: -122.4324,
-    };
-
-    setMarkerCoordinates(coordinates);
-  };
+  const [pin, setPin] = React.useState({
+    latitude: -26.0152505797,
+    longitude: 28.1070868125,
+  });
+  const [region, setRegion] = React.useState({
+    latitude: -26.0152505797,
+    longitude: 28.1070868125,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Pick-up Location"
-          value={pickUpLocation}
-          onChangeText={handlePickUpLocationChange}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Drop-off Location"
-          value={dropOffLocation}
-          onChangeText={handleDropOffLocationChange}
-        />
-        <Button title="Search" onPress={handleSearch} />
-      </View>
+    <View style={{ marginTop: 25, flex: 1 }}>
+      <GooglePlacesAutocomplete
+        placeholder="Drop off Location"
+        fetchDetails={true}
+        GooglePlacesSearchQuery={{
+          rankby: "distance",
+        }}
+        onPress={(data, details = null) => {
+          // 'details' is provided when fetchDetails = true
+          console.log(data, details);
+          setRegion({
+            latitude: details.geometry.location.lat,
+            longitude: details.geometry.location.lng,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          });
+        }}
+        query={{
+          key: "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws",
+          language: "en",
+          // components: "country: South Africa",
+          types: "establishment",
+          radius: 30000,
+          location: `${region.latitude}, ${region.longitude}`,
+        }}
+        styles={{
+          container: {
+            flex: 0,
+            position: "absolute",
+            width: "100%",
+            zIndex: 1,
+          },
+          listView: { backgroundColor: "white" },
+        }}
+      />
+
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: -26.0152505797,
+          longitude: 28.1070868125,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
+        provider="google"
       >
-        {markerCoordinates && <Marker coordinate={markerCoordinates} />}
+        <Marker
+          coordinate={{
+            latitude: region.latitude,
+            longitude: region.longitude,
+          }}
+        />
+        <Marker
+          coordinate={pin}
+          pinColor="black"
+          draggable={true}
+          onDragStart={(e) => {
+            console.log("Drag start", e.nativeEvent.coordinates);
+          }}
+          onDragEnd={(e) => {
+            setPin({
+              latitude: e.nativeEvent.coordinate.latitude,
+              longitude: e.nativeEvent.coordinate.longitude,
+            });
+          }}
+        >
+          <Callout>
+            <Text>I'm here</Text>
+          </Callout>
+        </Marker>
+        <Circle center={pin} radius={1000} />
       </MapView>
     </View>
   );
@@ -65,18 +97,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  searchContainer: {
-    padding: 16,
-  },
-  input: {
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
-    marginBottom: 12,
-    paddingHorizontal: 8,
-  },
   map: {
-    flex: 1,
+    width: "100%",
+    height: "100%",
   },
 });
 
