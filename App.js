@@ -1,12 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import HomeScreen from "./screens/HomeScreen";
+import Home from "./screens/HomeScreen/index.js";
 
 //Google API Key: AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws
 
-const Stack = createNativeStackNavigator();
-
 export default function App() {
-  return <HomeScreen />;
+  return <Home />;
 }
