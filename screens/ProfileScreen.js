@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View, Text, StyleSheet, TextInput} from "react-native";
-import CustomInput from "../Components/CustomInput/CustomInputRegistration";
-import CustomButton from "../Components/CustomButton/CustomButton";
+import CustomInput from "../Components/CustomInput/CustomInputProfile";
+import CustomButton from "../Components/CustomButton/CustomButtonProfile";
 
 const ProfileScreen = () => {
   const [full_name, setFull_name] = useState(" ");
