@@ -10,8 +10,11 @@ const CustomButtonVerify = ({onPress, text}) => {
         
         ]}>
 
-            <Text style = {styles.text}>Verify</Text>
+            <Text style = {styles.text}>VERIFY</Text>
         </Pressable>
+
+
+
     );
 };
 
@@ -30,6 +33,7 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: "bold",
         color:"white",
+        fontSize: 20,
     },
 
 
