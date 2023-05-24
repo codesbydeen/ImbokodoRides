@@ -20,21 +20,21 @@ const ProfileScreen = () => {
       <Text style = {styles.title}>Profile</Text>
     
  
-      <Text>Full name</Text>
+      <Text>              Full name</Text>
     <CustomInput 
     placeholder= "Full name" 
     value = {full_name} 
     setValue={setFull_name} 
     />
 
-<Text>Phone number</Text>
+      <Text>              Phone number</Text>
 <CustomInput 
     placeholder= "Phone number" 
     value = {Phone_number} 
     setValue={setPhone_number} 
     />
 
-<Text>Email Address</Text>
+      <Text>              Email Address</Text>
 <CustomInput 
     placeholder= "Email address" 
     value = {Email_address} 
