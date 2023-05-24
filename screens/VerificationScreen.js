@@ -14,11 +14,11 @@ const VerificationScreen = ({text}) => {
        
             <CustomInput/>
 
-            <CustomButton/>
+            <CustomButton text = "VERIFY"/>
 
             <Text style = {styles.text6}>Resend OTP?</Text>
 
-            <CustomButton/>
+            <CustomButton text= "GET OTP"/>
         </View>
     );
 };

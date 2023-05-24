@@ -10,7 +10,14 @@ const CustomButtonVerify = ({onPress, text}) => {
         
         ]}>
 
-            <Text style = {styles.text}>VERIFY</Text>
+            <Text style = {[
+                styles.text,
+                
+            ]}>
+                {text}
+            </Text>
+
+            
         </Pressable>
 
 
