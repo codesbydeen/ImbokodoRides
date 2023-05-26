@@ -1,9 +1,12 @@
 import React from "react"
 import {View, Text, StyleSheet, Pressable} from "react-native"
+import { useNavigation } from "@react-navigation/native";
 
 const CustomButtonProfile = ({onPress, text}) => {
+    const nav = useNavigation();
+
     return(
-        <Pressable onPress = {onPress} 
+        <Pressable onPress = {() => nav.navigate("Biometrics")} 
         style = {[styles.container,
             
         

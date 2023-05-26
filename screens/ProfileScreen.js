@@ -8,8 +8,6 @@ const ProfileScreen = () => {
   const [Phone_number, setPhone_number] = useState(" ");
   const [Email_address, setEmail_address] = useState(" ");
 
-
-
   const onSavePress = () => {
     console.warn("Saved");
   }

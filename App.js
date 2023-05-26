@@ -5,6 +5,7 @@ import OnboardingScreen from "./screens/OnboardingScreen";
 import VerficationScreen from "./screens/VerificationScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import BiometricsScreen from "./screens/BiometricsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="Registration"
+          component={RegistrationScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{ headerShown: false }}
@@ -26,12 +32,12 @@ export default function App() {
           name="Verification"
           component={VerficationScreen}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Registration"
-          component={RegistrationScreen}
+        /> 
+         <Stack.Screen
+          name="Biometrics"
+          component={BiometricsScreen}
           options={{ headerShown: false }}
-        />
+        /> 
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
