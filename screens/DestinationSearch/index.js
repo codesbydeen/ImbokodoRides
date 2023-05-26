@@ -1,33 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, TextInput } from "react-native";
 import styles from "./styles";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 const DestinationSearch = () => {
-  // store entered locations in order to use them later
-  const [fromText, setFromText] = useState("");
-  const [destinationText, setDestinationText] = useState("");
+  // storing both input locations
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
+
+  useEffect(() => {
+    if (originPlace && destinationPlace) {
+      //implement navigation to go to the next page
+      console.warn("Redirect to results");
+    }
+  }, [originPlace, destinationPlace]);
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <TextInput
-          value={fromText}
-          onChangeText={setFromText}
-          style={styles.textInput}
-          placeholder="From"
-        />
-        <TextInput
-          value={destinationText}
-          onChangeText={setDestinationText}
-          style={styles.textInput}
-          placeholder="Where to?"
-        />
         <GooglePlacesAutocomplete
-          placeholder="Search"
+          placeholder="Where from?"
           onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
+            setOriginPlace({ data, details });
           }}
+          styles={{
+            textInput: styles.textInput,
+          }}
+          fetchDetails
+          query={{
+            key: "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws",
+            language: "en",
+          }}
+        />
+
+        <GooglePlacesAutocomplete
+          placeholder="Where to?"
+          onPress={(data, details = null) => {
+            setDestinationPlace({ data, details });
+          }}
+          styles={{
+            textInput: styles.textInput,
+          }}
+          fetchDetails
           query={{
             key: "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws",
             language: "en",
