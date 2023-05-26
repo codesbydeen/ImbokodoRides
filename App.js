@@ -6,6 +6,7 @@ import VerficationScreen from "./screens/VerificationScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import BiometricsScreen from "./screens/BiometricsScreen";
+import RidehistoryScreen from "./screens/RidehistoryScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,11 @@ export default function App() {
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Ridehistory"
+          component={RidehistoryScreen}
           options={{ headerShown: false }}
         />
 

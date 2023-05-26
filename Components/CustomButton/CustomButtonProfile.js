@@ -6,7 +6,7 @@ const CustomButtonProfile = ({onPress, text}) => {
     const nav = useNavigation();
 
     return(
-        <Pressable onPress = {() => nav.navigate("Biometrics")} 
+        <Pressable onPress = {() => nav.navigate("Ridehistory")} 
         style = {[styles.container,
             
         
