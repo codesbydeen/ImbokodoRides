@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Dimensions, View } from "react-native";
 import HomeMap from "../../Components/HomeMap";
 import HealthMessage from "../../Components/HealthMessage";
 import HomeSearch from "../../Components/HomeSearch";
@@ -7,8 +7,10 @@ import HomeSearch from "../../Components/HomeSearch";
 const Home = (props) => {
   return (
     <View>
-      {/* Map View */}
-      <HomeMap />
+      <View style={{ height: Dimensions.get("window").height - 400 }}>
+        {/* Map View */}
+        <HomeMap />
+      </View>
 
       {/* Health Message */}
       <HealthMessage />
