@@ -1,15 +1,21 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeSearch = (props) => {
+  const navigation = useNavigation();
+
+  const goToSearch = () => {
+    navigation.navigate("DestinationSearch");
+  };
   return (
     <View>
       {/* Input Box */}
-      <View style={styles.inputBox}>
+      <Pressable onPress={goToSearch} style={styles.inputBox}>
         <Text style={styles.inputText}>Where To?</Text>
         <View style={styles.timeContainer}>
           {/* clock icon */}
@@ -18,7 +24,7 @@ const HomeSearch = (props) => {
           {/* down arrow icon */}
           <SimpleLineIcons name="arrow-down" size={16} color="black" />
         </View>
-      </View>
+      </Pressable>
 
       {/* Last Search Location */}
       <View style={styles.row}>

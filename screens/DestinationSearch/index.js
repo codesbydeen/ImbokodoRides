@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, TextInput } from "react-native";
 import styles from "./styles";
 import PlaceRow from "./PlaceRow";
+import { useNavigation } from "@react-navigation/native";
 // import Geolocation from "@react-native-community/geolocation";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
@@ -19,10 +20,12 @@ const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
 
+  const navigation = useNavigation();
+
   useEffect(() => {
     if (originPlace && destinationPlace) {
       //implement navigation to go to the next page
-      console.warn("Redirect to results");
+      navigation.navigate("SearchResults");
     }
   }, [originPlace, destinationPlace]);
   return (

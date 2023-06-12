@@ -1,8 +1,9 @@
-import HomeScreen from "./screens/HomeScreen/index.js";
+import "react-native-gesture-handler";
+import Router from "./Navigation/Root";
 import { PermissionsAndroid, Platform } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
-// import Geolocation from "@react-native-community/geolocation";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   //Location Permissions
@@ -40,6 +41,11 @@ export default function App() {
     }
   }, []);
 
-  return <HomeScreen />;
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <Router />
+    </>
+  );
 }
 //Google API Key: AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws
