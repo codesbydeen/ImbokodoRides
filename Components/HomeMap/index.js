@@ -5,11 +5,11 @@ import cars from "../../assets/data/cars";
 
 const HomeMap = () => {
   const getImage = (type) => {
-    if (type === "RideX") {
-      return require("../../assets/images/top-RideX.png");
+    if (type === "LadyRide") {
+      return require("../../assets/images/top-LadyRide.png");
     }
-    if (type === "RideComfort") {
-      return require("../../assets/images/top-RideComfort.png");
+    if (type === "GentlemanRide") {
+      return require("../../assets/images/top-GentlemanRide.png");
     }
     return require("../../assets/images/top-RideXL.png");
   };
@@ -20,10 +20,10 @@ const HomeMap = () => {
       provider={PROVIDER_GOOGLE}
       showsUserLocation={true}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
-        latitudeDelta: 0.0222,
-        longitudeDelta: 0.0121,
+        latitude: -26.02146,
+        longitude: 28.1334,
+        latitudeDelta: 0.022,
+        longitudeDelta: 0.0221,
       }}
     >
       {cars.map((car) => (

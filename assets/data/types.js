@@ -1,13 +1,13 @@
 export default [
   {
     id: "0",
-    type: "RideX",
+    type: "LadyRide",
     price: 22,
     duration: 45,
   },
   {
     id: "1",
-    type: "RideComfort",
+    type: "GentlemanRide",
     price: 27,
     duration: 30,
   },

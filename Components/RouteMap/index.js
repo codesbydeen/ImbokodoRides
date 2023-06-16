@@ -5,13 +5,13 @@ import MapViewDirections from "react-native-maps-directions";
 
 const RouteMap = () => {
   const origin = {
-    latitude: 28.450627,
-    longitude: -16.263045,
+    latitude: -26.02084,
+    longitude: 28.13356,
   };
 
   const destination = {
-    latitude: 28.460127,
-    longitude: -16.269045,
+    latitude: -26.01406,
+    longitude: 28.10747,
   };
 
   return (
@@ -19,8 +19,8 @@ const RouteMap = () => {
       style={{ width: "100%", height: "100%" }}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
+        latitude: -26.02084,
+        longitude: 28.13356,
         latitudeDelta: 0.0222,
         longitudeDelta: 0.0121,
       }}

@@ -8,11 +8,11 @@ const RideTypeRow = (props) => {
 
   //   Function to get custom picture based on ride option
   const getImage = () => {
-    if (type.type === "RideX") {
-      return require("../../assets/images/RideX.jpeg");
+    if (type.type === "LadyRide") {
+      return require("../../assets/images/LadyRide.jpeg");
     }
-    if (type.type === "RideComfort") {
-      return require("../../assets/images/RideComfort.jpeg");
+    if (type.type === "GentlemanRide") {
+      return require("../../assets/images/GentlemanRide.jpeg");
     }
     return require("../../assets/images/RideXL.jpeg");
   };
