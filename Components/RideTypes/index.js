@@ -11,7 +11,7 @@ const RideTypes = () => {
   return (
     <View>
       {typesData.map((type) => (
-        <RideTypeRow type={type} />
+        <RideTypeRow type={type} key={type.id} />
       ))}
 
       <Pressable

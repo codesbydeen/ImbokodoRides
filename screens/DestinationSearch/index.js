@@ -25,7 +25,11 @@ const DestinationSearch = () => {
   useEffect(() => {
     if (originPlace && destinationPlace) {
       //implement navigation to go to the next page
-      navigation.navigate("SearchResults");
+      //send data when navigating
+      navigation.navigate("SearchResults", {
+        originPlace,
+        destinationPlace,
+      });
     }
   }, [originPlace, destinationPlace]);
   return (

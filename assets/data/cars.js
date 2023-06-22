@@ -20,11 +20,11 @@ export default [
     longitude: 28.13036,
     heading: 250,
   },
-  {
-    id: "3",
-    type: "GentlemanRide",
-    latitude: -26.01851,
-    longitude: 28.1368,
-    heading: 30,
-  },
+  // {
+  //   id: "3",
+  //   type: "GentlemanRide",
+  //   latitude: -26.01851,
+  //   longitude: 28.1368,
+  //   heading: 30,
+  // },
 ];
