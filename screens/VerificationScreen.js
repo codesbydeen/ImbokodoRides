@@ -24,6 +24,14 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: "#ffffff"
     },
+    title: {
+        fontSize: 30,
+        fontWeight: "bold",
+        fontColor: "#051C60",
+        margin : 10,
+        textAlign: "center",
+    
+    },
     title2:{
       fontSize: 30,
       fontWeight: "bold",
