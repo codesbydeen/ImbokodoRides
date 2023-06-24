@@ -8,11 +8,11 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 
 const homePlace = {
   description: "Home",
-  geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
+  geometry: { location: { lat: -26.02153, lng: 28.14156 } },
 };
 const workPlace = {
   description: "Work",
-  geometry: { location: { lat: 48.8496818, lng: 2.2940881 } },
+  geometry: { location: { lat: -26.02047, lng: 28.13371 } },
 };
 
 const DestinationSearch = () => {

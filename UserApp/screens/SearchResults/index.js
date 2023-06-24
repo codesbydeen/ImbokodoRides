@@ -14,12 +14,12 @@ const SearchResults = () => {
 
   return (
     <View style={{ display: "flex", justifyContent: "space-between" }}>
-      <View style={{ height: Dimensions.get("window").height - 400 }}>
+      <View style={{ height: Dimensions.get("window").height - 450 }}>
         {/* Map screen displaying the trip */}
         <RouteMap origin={originPlace} destination={destinationPlace} />
       </View>
 
-      <View style={{ height: 400 }}>
+      <View style={{ height: 450 }}>
         {/* Show different ride options */}
         <RideTypes />
       </View>
