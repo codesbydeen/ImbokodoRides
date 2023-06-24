@@ -9,7 +9,12 @@ Always run this command to get the latest changes from the master branch:
 ```bash
 git pull origin master
 ```
+## Commiting Changes
+Always write a message when commiting:
 
+```bash
+git commit -m
+```
 ## Setting Up Project
 
 1. Open your desktop on your pc files
