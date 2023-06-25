@@ -3,14 +3,13 @@ import { View, Text, Pressable } from "react-native";
 import styles from "./styles";
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
 
-const NewOrderPopUp = () => {
-  //Function to decline passenger order
-  const onDecline = () => {
-    console.warn("Order has been declined");
-  };
-  const onAccept = () => {
-    console.warn("Order has been accepted");
-  };
+const NewOrderPopUp = ({
+  newOrder,
+  onAccept,
+  onDecline,
+  duration,
+  distance,
+}) => {
   return (
     <View style={styles.root}>
       <Pressable onPress={onDecline} style={styles.declineB}>
@@ -18,16 +17,17 @@ const NewOrderPopUp = () => {
       </Pressable>
       <Pressable onPress={onAccept} style={styles.popUpContainer}>
         <View style={styles.row}>
-          <Text style={styles.rideType}>RideX</Text>
+          <Text style={styles.rideType}>{newOrder.type}</Text>
           <View style={styles.userBg}>
             <FontAwesome name="user" size={25} color="#FFFFFF" />
           </View>
           <Text style={styles.rideType}>
-            <AntDesign name="star" size={13} color="black" />5
+            <AntDesign name="star" size={15} color="black" />
+            {newOrder.user.rating}
           </Text>
         </View>
-        <Text style={styles.minutes}>2 min</Text>
-        <Text style={styles.distance}>1 Km</Text>
+        <Text style={styles.minutes}>{duration} min</Text>
+        <Text style={styles.distance}>{distance} Km</Text>
       </Pressable>
     </View>
   );

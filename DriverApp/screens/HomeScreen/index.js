@@ -19,6 +19,31 @@ const GOOGLE_MAPS_APIKEY = "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws";
 const HomeScreen = () => {
   //switching from online to offline
   const [isOnline, setIsOnline] = useState(false);
+  //Ride trip requests or Orders
+  const [order, setOrder] = useState({});
+  const [newOrder, setNewOrder] = useState({
+    id: "1",
+    type: "LadyRide",
+
+    originLatitude: -26.01829,
+    originLongitude: 28.13691,
+
+    destLatitude: -26.02066,
+    destLongitude: 28.13362,
+
+    user: {
+      rating: 4.0,
+    },
+  });
+
+  const onDecline = () => {
+    setNewOrder(null);
+  };
+
+  const onAccept = (newOrder) => {
+    setOrder(newOrder);
+    setNewOrder(null);
+  };
 
   const onGoPress = () => {
     setIsOnline(!isOnline);
@@ -95,7 +120,15 @@ const HomeScreen = () => {
       </View>
 
       {/* Pop Up Order */}
-      <NewOrderPopUp />
+      {newOrder && (
+        <NewOrderPopUp
+          newOrder={newOrder}
+          duration={2}
+          distance={0.5}
+          onDecline={onDecline}
+          onAccept={() => onAccept(newOrder)}
+        />
+      )}
     </View>
   );
 };
