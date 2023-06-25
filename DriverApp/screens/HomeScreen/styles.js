@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   balanceB: {
     position: "absolute",
-    backgroundColor: "#673AB7",
+    backgroundColor: "#000000",
     width: 100,
     height: 50,
     justifyContent: "center",

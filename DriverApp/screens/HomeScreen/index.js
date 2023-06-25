@@ -10,6 +10,7 @@ import {
   Ionicons,
 } from "@expo/vector-icons";
 import styles from "./styles.js";
+import NewOrderPopUp from "../../Components/NewOrderPopUp/index.js";
 
 const origin = { latitude: 37.3318456, longitude: -122.0296002 };
 const destination = { latitude: 37.771707, longitude: -122.4053769 };
@@ -92,6 +93,9 @@ const HomeScreen = () => {
         )}
         <Entypo name="menu" size={24} color="#4a4a4a" />
       </View>
+
+      {/* Pop Up Order */}
+      <NewOrderPopUp />
     </View>
   );
 };
