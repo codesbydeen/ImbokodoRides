@@ -6,12 +6,14 @@ const CustomButtonProfile = ({ onPress, text }) => {
   const nav = useNavigation();
 
   return (
-    <Pressable
-      onPress={() => nav.navigate("Ridehistory")}
-      style={[styles.container]}
-    >
-      <Text style={[styles.text]}>{text}</Text>
-    </Pressable>
+    <View>
+      <Pressable
+        onPress={() => nav.navigate("Ridehistory")}
+        style={[styles.container]}
+      >
+        <Text style={[styles.text]}>{text}</Text>
+      </Pressable>
+    </View>
   );
 };
 

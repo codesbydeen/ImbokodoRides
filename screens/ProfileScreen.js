@@ -11,12 +11,6 @@ const ProfileScreen = () => {
   const onViewPress = () => {
     console.warn("View");
   };
-
-  return (
-    <View style={{ flex: 1, justifyContent: "center" }}>
-      <Text style={styles.title}>Sandra Dlamini</Text>
-    </View>
-  );
   const onSavePress = () => {
     console.warn("Saved");
   };
@@ -24,6 +18,7 @@ const ProfileScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
       <Text style={styles.title}>Profile</Text>
+      <Text style={styles.title}>Sandra Dlamini</Text>
 
       <Text> Full name</Text>
       <CustomInput
@@ -38,15 +33,6 @@ const ProfileScreen = () => {
         value={Phone_number}
         setValue={setPhone_number}
       />
-
-      <CustomInput
-        placeholder="Email address"
-        value={Email_address}
-        setValue={setEmail_address}
-        secureTextEntry
-      />
-
-      <CustomButton text="SAVE" onPress={onViewPress} />
 
       <Text> Email Address</Text>
       <CustomInput
