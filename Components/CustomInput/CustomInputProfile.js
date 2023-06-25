@@ -5,7 +5,11 @@ const CustomInputProfile = ({value, setValue, placeholder}) => {
     return(
         <View style = {styles.container}>
             <TextInput 
-            placeholder = "" 
+
+            placeholder = "Full name" 
+
+            
+
             style = {styles.input}/>
         </View>
     );
