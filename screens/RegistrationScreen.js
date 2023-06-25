@@ -26,7 +26,7 @@ const onLoginWithGooglePress = () => {
     <View style={{ flex: 1, justifyContent: "center" }}>
       <Text style = {styles.title}>Create your Account</Text>
     
-    <Text>Username</Text>
+    <Text>       Username</Text>
 
     <CustomInput 
     placeholder= "Username" 
@@ -34,7 +34,7 @@ const onLoginWithGooglePress = () => {
     setValue={setUsername} 
     />
 
-    <Text>Email</Text>
+    <Text>       Email</Text>
 
 <CustomInput 
     placeholder= "Email" 
@@ -42,7 +42,7 @@ const onLoginWithGooglePress = () => {
     setValue={setEmail} 
     />
 
-    <Text>Password</Text>
+    <Text>       Password</Text>
     <CustomInput 
     placeholder= "Password"
     value = {password} 
@@ -50,7 +50,7 @@ const onLoginWithGooglePress = () => {
     secureTextEntry
     />
 
-    <Text>Confirm Password</Text>
+    <Text>       Confirm Password</Text>
 
 <CustomInput 
     placeholder= "ConfirmPassword" 

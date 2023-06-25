@@ -2,34 +2,35 @@ import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const CustomButtonLogin = () => {
+const CustomButtonRidehistory = () => {
   const nav = useNavigation();
 
   return (
     <Pressable
-      onPress={() => nav.navigate("Verification")}
+      onPress={() => nav.navigate("Profile")}
       style={[styles.container]}
     >
-      <Text style={styles.text}>Continue</Text>
+      <Text style={styles.text}>Back</Text>
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#800080",
+    backgroundColor: "purple",
 
-    width: "75%",
-    padding: 15,
-    marginVertical: 5,
+    width: "15%",
+    padding: 10,
+    marginVertical: 10,
     alignItems: "center",
-    alignSelf: "center",
+    alignSelf: "flex-start",
     borderRadius: 5,
   },
   text: {
     fontWeight: "bold",
     color: "white",
+    
   },
 });
 
-export default CustomButtonLogin;
+export default CustomButtonRidehistory;

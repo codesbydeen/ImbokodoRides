@@ -1,15 +1,11 @@
 import React from "react"
 import {View, Text, TextInput, StyleSheet} from "react-native"
 
-const CustomInputProfile = ({value, setValue, placeholder}) => {
+const CustomInputRidehistory = ({ placeholder}) => {
     return(
         <View style = {styles.container}>
             <TextInput 
-
-            placeholder = "Full name" 
-
-            placeholder = "" 
-
+            placeholder = "Waterfall City                                  R60" 
             style = {styles.input}/>
         </View>
     );
@@ -29,4 +25,4 @@ const CustomInputProfile = ({value, setValue, placeholder}) => {
  });
 
 
-export default CustomInputProfile;
+export default CustomInputRidehistory;

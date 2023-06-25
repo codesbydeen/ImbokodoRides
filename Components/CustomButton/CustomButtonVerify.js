@@ -1,17 +1,31 @@
 import React from "react"
 import {View, Text, StyleSheet, Pressable} from "react-native"
+import { useNavigation } from "@react-navigation/native";
 
 const CustomButtonVerify = ({onPress, text}) => {
+    const nav = useNavigation();
+
     return(
-        <Pressable onPress = {onPress} 
+        <Pressable 
+        onPress = {() => nav.navigate("Registration")} 
         style = {[styles.container,
             
         
         
         ]}>
 
-            <Text style = {styles.text}>Verify</Text>
+            <Text style = {[
+                styles.text,
+                
+            ]}>
+                {text}
+            </Text>
+
+            
         </Pressable>
+
+
+
     );
 };
 
@@ -30,6 +44,7 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: "bold",
         color:"white",
+        fontSize: 20,
     },
 
 

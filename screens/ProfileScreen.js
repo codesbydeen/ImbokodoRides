@@ -8,7 +8,6 @@ const ProfileScreen = () => {
   const [Phone_number, setPhone_number] = useState(" ");
   const [Email_address, setEmail_address] = useState(" ");
 
-
   const onViewPress = () => {
     console.warn("View");
   }
@@ -18,11 +17,24 @@ const ProfileScreen = () => {
       <Text style = {styles.title}>Sandra Dlamini</Text>
 
 
+=======
+  const onSavePress = () => {
+    console.warn("Saved");
+  }
+
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center" }}>
+      <Text style = {styles.title}>Profile</Text>
+    
+ 
+      <Text>              Full name</Text>
     <CustomInput 
     placeholder= "Full name" 
     value = {full_name} 
     setValue={setFull_name} 
     />
+      <Text>              Phone number</Text>
 
 <CustomInput 
     placeholder= "Phone number" 
@@ -42,6 +54,17 @@ const ProfileScreen = () => {
     text = "SAVE" 
     onPress={ onViewPress}/>
 
+
+      <Text>              Email Address</Text>
+<CustomInput 
+    placeholder= "Email address" 
+    value = {Email_address} 
+    setValue={setEmail_address} 
+    />
+   
+    <CustomButton 
+    text = "SAVE" 
+    onPress={ onSavePress}/>
 
     
     </View>
@@ -72,7 +95,9 @@ text:{
 },
 
 
+
 });
 
 
 export default ProfileScreen;
+

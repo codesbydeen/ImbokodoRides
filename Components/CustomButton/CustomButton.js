@@ -1,9 +1,12 @@
 import React from "react"
 import {View, Text, StyleSheet, Pressable} from "react-native"
+import { useNavigation } from "@react-navigation/native";
 
 const CustomButton = ({onPress, text, bgColor, fgColor}) => {
+    const nav = useNavigation();
+
     return(
-        <Pressable onPress = {onPress} 
+        <Pressable onPress = {() => nav.navigate("Profile")}
         style = {[styles.container,
             bgColor ? {backgroundColor: bgColor} :{}
         
@@ -25,10 +28,11 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#800080",
 
-        width: "100%",
+        width: "75%",
         padding: 15,
         marginVertical: 5,
         alignItems: "center",
+        alignSelf: "center",
         borderRadius: 5,
     },
     text: {

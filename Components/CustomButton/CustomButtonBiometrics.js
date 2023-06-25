@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const CustomButtonLogin = () => {
+const CustomButtonBiometrics = () => {
   const nav = useNavigation();
 
   return (
     <Pressable
-      onPress={() => nav.navigate("Verification")}
+      onPress={() => nav.navigate("Profile")}
       style={[styles.container]}
     >
       <Text style={styles.text}>Continue</Text>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomButtonLogin;
+export default CustomButtonBiometrics;
