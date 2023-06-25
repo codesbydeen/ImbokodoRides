@@ -33,9 +33,6 @@ const CustomButtonProfile = ({onPress, text}) => {
             
         </Pressable>
 
-
-
-
     );
 };
 

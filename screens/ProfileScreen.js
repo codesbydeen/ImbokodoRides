@@ -15,13 +15,12 @@ const ProfileScreen = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
       <Text style = {styles.title}>Sandra Dlamini</Text>
-
-
-=======
+</View>
+  )
   const onSavePress = () => {
     console.warn("Saved");
   }
-
+  
 
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>

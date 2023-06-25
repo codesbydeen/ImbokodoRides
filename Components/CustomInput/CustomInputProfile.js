@@ -8,7 +8,7 @@ const CustomInputProfile = ({value, setValue, placeholder}) => {
 
             placeholder = "Full name" 
 
-            placeholder = "" 
+            
 
             style = {styles.input}/>
         </View>
