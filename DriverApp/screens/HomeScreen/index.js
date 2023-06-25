@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Dimensions, Pressable } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import { Entypo, AntDesign } from "@expo/vector-icons";
+import {
+  Entypo,
+  FontAwesome,
+  MaterialIcons,
+  FontAwesome5,
+  Ionicons,
+} from "@expo/vector-icons";
 import styles from "./styles.js";
 
 const origin = { latitude: 37.3318456, longitude: -122.0296002 };
@@ -10,6 +16,13 @@ const destination = { latitude: 37.771707, longitude: -122.4053769 };
 const GOOGLE_MAPS_APIKEY = "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws";
 
 const HomeScreen = () => {
+  //switching from online to offline
+  const [isOnline, setIsOnline] = useState(false);
+
+  const onGoPress = () => {
+    setIsOnline(!isOnline);
+  };
+
   return (
     <View>
       <MapView
@@ -29,14 +42,54 @@ const HomeScreen = () => {
           apikey={GOOGLE_MAPS_APIKEY}
         />
       </MapView>
-      {styles.roundButton}
-      <Pressable onPress={() => console.warn("Hey")}>
+      <Pressable
+        onPress={() => console.warn("Balance")}
+        style={styles.balanceB}
+      >
+        <Text style={styles.balanceText}>
+          <Text style={{ color: "green" }}>R</Text>0.00
+        </Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => console.warn("Hey")}
+        style={[styles.roundB, { top: 25, left: 10 }]}
+      >
         <Entypo name="menu" size={24} color="#4a4a4a" />
       </Pressable>
 
+      <Pressable
+        onPress={() => console.warn("Hey")}
+        style={[styles.roundB, { top: 25, right: 10 }]}
+      >
+        <FontAwesome name="search" size={20} color="#4a4a4a" />
+      </Pressable>
+
+      <Pressable
+        onPress={() => console.warn("Hey")}
+        style={[styles.roundB, { bottom: 110, left: 10 }]}
+      >
+        <MaterialIcons name="my-location" size={24} color="#4a4a4a" />
+      </Pressable>
+
+      <Pressable
+        onPress={() => console.warn("Hey")}
+        style={[styles.roundB, { bottom: 110, right: 10 }]}
+      >
+        <FontAwesome5 name="flag-checkered" size={24} color="#4a4a4a" />
+      </Pressable>
+
+      <Pressable onPress={onGoPress} style={styles.goB}>
+        <Text style={styles.goText}>{isOnline ? "END" : "GO"}</Text>
+      </Pressable>
+
       <View style={styles.bottomContainer}>
-        <AntDesign name="questioncircle" size={24} color="#4a4a4a" />
-        <Text style={styles.bottomText}>You are offline</Text>
+        <Ionicons name="options-outline" size={24} color="#4a4a4a" />
+        {isOnline ? (
+          <Text style={styles.bottomText}>You are online</Text>
+        ) : (
+          <Text style={styles.bottomText}>You are offline</Text>
+        )}
         <Entypo name="menu" size={24} color="#4a4a4a" />
       </View>
     </View>
