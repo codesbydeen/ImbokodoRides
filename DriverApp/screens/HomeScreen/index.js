@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Dimensions, Pressable } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
@@ -57,7 +57,7 @@ const HomeScreen = () => {
   };
 
   const onDirectionFound = (event) => {
-    console.log("Direction found: ", event);
+    // console.log("Direction found: ", event);
     if (order) {
       setOrder({
         ...order,
@@ -67,7 +67,55 @@ const HomeScreen = () => {
     }
   };
 
+  const getDestination = () => {
+    if (order && order.pickedUp) {
+      return {
+        latitude: order.destLatitude,
+        longitude: order.destLongitude,
+      };
+    }
+    return {
+      latitude: order.originLatitude,
+      longitude: order.originLongitude,
+    };
+  };
+
+  //When the driver is picking up the user
+  useEffect(() => {
+    if (order && order.distance && order.distance < 0.2) {
+      setOrder({
+        ...order,
+        pickedUp: true,
+      });
+    }
+  }, []);
+
   const renderBottomTitle = () => {
+    if (order && order.pickedUp) {
+      return (
+        <View style={{ alignItems: "center" }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text>{order.duration ? order.duration.toFixed(1) : "?"} min</Text>
+            <View
+              style={{
+                backgroundColor: "#d41212",
+                marginHorizontal: 10,
+                width: 30,
+                height: 30,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 20,
+              }}
+            >
+              <FontAwesome name="user" size={20} color="#FFFFFF" />
+            </View>
+            <Text>{order.distance ? order.distance.toFixed(1) : "?"} km</Text>
+          </View>
+          <Text style={styles.bottomText}>Dropping Off {order.user.name}</Text>
+        </View>
+      );
+    }
+
     if (order) {
       return (
         <View style={{ alignItems: "center" }}>
@@ -119,10 +167,7 @@ const HomeScreen = () => {
           <MapViewDirections
             origin={myPosition}
             onReady={onDirectionFound}
-            destination={{
-              latitude: order.originLatitude,
-              longitude: order.originLongitude,
-            }}
+            destination={getDestination()}
             apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={5}
             strokeColor="purple"
