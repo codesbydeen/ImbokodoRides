@@ -64,6 +64,7 @@ const HomeScreen = () => {
         distance: event.distance,
         duration: event.duration,
         pickedUp: order.pickedUp || event.distance < 0.2,
+        isFinished: order.pickedUp && event.distance < 0.2,
       });
     }
   };
@@ -82,6 +83,28 @@ const HomeScreen = () => {
   };
 
   const renderBottomTitle = () => {
+    if (order && order.isFinished) {
+      return (
+        <View style={{ alignItems: "center" }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              backgroundColor: "#cd1a1a",
+              width: "100%",
+              justifyContent: "center",
+              padding: 10,
+            }}
+          >
+            <Text style={{ color: "white", fontWeight: "bold" }}>
+              Complete {order.type}
+            </Text>
+          </View>
+          <Text style={styles.bottomText}>{order.user.name}</Text>
+        </View>
+      );
+    }
+
     if (order && order.pickedUp) {
       return (
         <View style={{ alignItems: "center" }}>
