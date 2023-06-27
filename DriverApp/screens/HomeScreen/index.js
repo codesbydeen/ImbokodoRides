@@ -63,6 +63,7 @@ const HomeScreen = () => {
         ...order,
         distance: event.distance,
         duration: event.duration,
+        pickedUp: order.pickedUp || event.distance < 0.2,
       });
     }
   };
@@ -79,16 +80,6 @@ const HomeScreen = () => {
       longitude: order.originLongitude,
     };
   };
-
-  //When the driver is picking up the user
-  useEffect(() => {
-    if (order && order.distance && order.distance < 0.2) {
-      setOrder({
-        ...order,
-        pickedUp: true,
-      });
-    }
-  }, []);
 
   const renderBottomTitle = () => {
     if (order && order.pickedUp) {
