@@ -52,9 +52,9 @@ const HomeScreen = () => {
     setIsOnline(!isOnline);
   };
 
-  // const onUserLocationChange = (event) => {
-  //   setMyPosition(event.nativeEvent.coordinate);
-  // };
+  const onUserLocationChange = (event) => {
+    setMyPosition(event.nativeEvent.coordinate);
+  };
 
   const onDirectionFound = (event) => {
     console.log("Direction found: ", event);
@@ -72,7 +72,7 @@ const HomeScreen = () => {
       return (
         <View style={{ alignItems: "center" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text>2 min</Text>
+            <Text>{order.duration ? order.duration.toFixed(1) : "?"} min</Text>
             <View
               style={{
                 backgroundColor: "#1e9203",
@@ -86,7 +86,7 @@ const HomeScreen = () => {
             >
               <FontAwesome name="user" size={20} color="#FFFFFF" />
             </View>
-            <Text>0.2 km</Text>
+            <Text>{order.distance ? order.distance.toFixed(1) : "?"} km</Text>
           </View>
           <Text style={styles.bottomText}>Picking Up {order.user.name}</Text>
         </View>
@@ -106,7 +106,7 @@ const HomeScreen = () => {
         provider={PROVIDER_GOOGLE}
         showsMyLocationButton={true}
         showsUserLocation={true}
-        // onUserLocationChange={onUserLocationChange()}
+        onUserLocationChange={onUserLocationChange}
         onReady={onDirectionFound}
         initialRegion={{
           latitude: -26.02084,
@@ -117,7 +117,8 @@ const HomeScreen = () => {
       >
         {order && (
           <MapViewDirections
-            origin={origin}
+            origin={myPosition}
+            onReady={onDirectionFound}
             destination={{
               latitude: order.originLatitude,
               longitude: order.originLongitude,
@@ -127,8 +128,6 @@ const HomeScreen = () => {
             strokeColor="purple"
           />
         )}
-        {/* <Marker coordinate={origin} title={"Origin"} />
-        <Marker coordinate={destination} title={"Destination"} /> */}
       </MapView>
       <Pressable
         onPress={() => console.warn("Balance")}
