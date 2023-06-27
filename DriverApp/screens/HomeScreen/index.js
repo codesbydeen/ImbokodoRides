@@ -148,13 +148,6 @@ const HomeScreen = () => {
 
       <Pressable
         onPress={() => console.warn("Hey")}
-        style={[styles.roundB, { top: 25, right: 10 }]}
-      >
-        <FontAwesome name="search" size={20} color="#4a4a4a" />
-      </Pressable>
-
-      <Pressable
-        onPress={() => console.warn("Hey")}
         style={[styles.roundB, { bottom: 110, left: 10 }]}
       >
         <MaterialIcons name="my-location" size={24} color="#4a4a4a" />

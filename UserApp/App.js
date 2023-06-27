@@ -30,13 +30,30 @@ export default function App() {
       console.warn(err);
     }
   };
+  const requestLocationPermission = async () => {
+    // alert("location function is loading");
+    let getForeground = await Location.getForegroundPermissionsAsync();
+    if (getForeground.status !== "granted") {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        alert("Permission to access location was denied");
+        return;
+      } else {
+        let backgroundPermissions =
+          await Location.requestBackgroundPermissionsAsync();
+        if (backgroundPermissions.status == "granted") {
+          await AsyncStorage.setItem("background_permission", "true");
+        }
+      }
+    }
+  };
 
   useEffect(() => {
     if (Platform.OS === "android") {
       androidPermission();
     } else {
       // request iOS permissions
-      Geolocation.requestAuthorization();
+      requestLocationPermission();
     }
   }, []);
 
