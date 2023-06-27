@@ -7,7 +7,6 @@ import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   //Location Permissions
-  // navigator.geolocation = require("@react-native-community/geolocation");
   const androidPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(

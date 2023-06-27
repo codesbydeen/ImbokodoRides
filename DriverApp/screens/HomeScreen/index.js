@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Dimensions, Pressable } from "react-native";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import {
   Entypo,
@@ -12,15 +12,17 @@ import {
 import styles from "./styles.js";
 import NewOrderPopUp from "../../Components/NewOrderPopUp/index.js";
 
-const origin = { latitude: 37.3318456, longitude: -122.0296002 };
-const destination = { latitude: 37.771707, longitude: -122.4053769 };
+const origin = { latitude: -26.02066, longitude: 28.13362 };
+const destination = { latitude: -26.02082, longitude: 28.13356 };
 const GOOGLE_MAPS_APIKEY = "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws";
 
 const HomeScreen = () => {
+  //Driver position
+  const [myPosition, setMyPosition] = useState(null);
   //switching from online to offline
   const [isOnline, setIsOnline] = useState(false);
   //Ride trip requests or Orders
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState(null);
   const [newOrder, setNewOrder] = useState({
     id: "1",
     type: "LadyRide",
@@ -33,6 +35,7 @@ const HomeScreen = () => {
 
     user: {
       rating: 4.0,
+      name: "Maria",
     },
   });
 
@@ -49,12 +52,62 @@ const HomeScreen = () => {
     setIsOnline(!isOnline);
   };
 
+  // const onUserLocationChange = (event) => {
+  //   setMyPosition(event.nativeEvent.coordinate);
+  // };
+
+  const onDirectionFound = (event) => {
+    console.log("Direction found: ", event);
+    if (order) {
+      setOrder({
+        ...order,
+        distance: event.distance,
+        duration: event.duration,
+      });
+    }
+  };
+
+  const renderBottomTitle = () => {
+    if (order) {
+      return (
+        <View style={{ alignItems: "center" }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text>2 min</Text>
+            <View
+              style={{
+                backgroundColor: "#1e9203",
+                marginHorizontal: 10,
+                width: 30,
+                height: 30,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 20,
+              }}
+            >
+              <FontAwesome name="user" size={20} color="#FFFFFF" />
+            </View>
+            <Text>0.2 km</Text>
+          </View>
+          <Text style={styles.bottomText}>Picking Up {order.user.name}</Text>
+        </View>
+      );
+    }
+
+    if (isOnline) {
+      return <Text style={styles.bottomText}>You are online</Text>;
+    }
+    return <Text style={styles.bottomText}>You are offline</Text>;
+  };
+
   return (
     <View>
       <MapView
         style={{ width: "100%", height: Dimensions.get("window").height - 90 }}
         provider={PROVIDER_GOOGLE}
+        showsMyLocationButton={true}
         showsUserLocation={true}
+        // onUserLocationChange={onUserLocationChange()}
+        onReady={onDirectionFound}
         initialRegion={{
           latitude: -26.02084,
           longitude: 28.13356,
@@ -62,11 +115,20 @@ const HomeScreen = () => {
           longitudeDelta: 0.0121,
         }}
       >
-        <MapViewDirections
-          origin={origin}
-          destination={destination}
-          apikey={GOOGLE_MAPS_APIKEY}
-        />
+        {order && (
+          <MapViewDirections
+            origin={origin}
+            destination={{
+              latitude: order.originLatitude,
+              longitude: order.originLongitude,
+            }}
+            apikey={GOOGLE_MAPS_APIKEY}
+            strokeWidth={5}
+            strokeColor="purple"
+          />
+        )}
+        {/* <Marker coordinate={origin} title={"Origin"} />
+        <Marker coordinate={destination} title={"Destination"} /> */}
       </MapView>
       <Pressable
         onPress={() => console.warn("Balance")}
@@ -111,11 +173,7 @@ const HomeScreen = () => {
 
       <View style={styles.bottomContainer}>
         <Ionicons name="options-outline" size={24} color="#4a4a4a" />
-        {isOnline ? (
-          <Text style={styles.bottomText}>You are online</Text>
-        ) : (
-          <Text style={styles.bottomText}>You are offline</Text>
-        )}
+        {renderBottomTitle()}
         <Entypo name="menu" size={24} color="#4a4a4a" />
       </View>
 
