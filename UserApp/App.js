@@ -4,6 +4,9 @@ import { PermissionsAndroid, Platform } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { StatusBar } from "expo-status-bar";
+import { Amplify } from "aws-amplify";
+import awsExports from "./src/aws-exportsorts";
+Amplify.configure(awsExports);
 
 export default function App() {
   //Location Permissions

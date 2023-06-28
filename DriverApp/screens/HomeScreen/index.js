@@ -12,8 +12,6 @@ import {
 import styles from "./styles.js";
 import NewOrderPopUp from "../../Components/NewOrderPopUp/index.js";
 
-const origin = { latitude: -26.02066, longitude: 28.13362 };
-const destination = { latitude: -26.02082, longitude: 28.13356 };
 const GOOGLE_MAPS_APIKEY = "AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws";
 
 const HomeScreen = () => {
@@ -34,7 +32,7 @@ const HomeScreen = () => {
     destLongitude: 28.13362,
 
     user: {
-      rating: 4.0,
+      rating: 4.9,
       name: "Maria",
     },
   });
