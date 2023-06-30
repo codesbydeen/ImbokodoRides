@@ -8,6 +8,10 @@ import ProfileScreen from "./screens/ProfileScreen";
 import BiometricsScreen from "./screens/BiometricsScreen";
 import RidehistoryScreen from "./screens/RidehistoryScreen";
 
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
