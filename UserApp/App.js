@@ -8,6 +8,8 @@ import ProfileScreen from "./screens/ProfileScreen";
 import BiometricsScreen from "./screens/BiometricsScreen";
 import RidehistoryScreen from "./screens/RidehistoryScreen";
 
+import {withAuthenticator} from 'aws-amplify-react-native'
+
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 Amplify.configure(config)
@@ -58,3 +60,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
+

@@ -23,4 +23,16 @@ exports.handler = async (event, context) => {
         },
         TableName: process.env.USERTABLE,
     }
+        try {
+            await ddb.putItem(params).promise();
+            console.log("Success");
+        }catch (e) {
+            console.log("Error", e);
+        }
+
+        context.done(null, event)
+
+
+
+
 }
