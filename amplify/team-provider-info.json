@@ -13,7 +13,16 @@
     },
     "categories": {
       "auth": {
-        "imbokodorides76fcffe776fcffe7": {}
+        "imbokodorides76fcffe776fcffe7": {},
+        "userPoolGroups": {}
+      },
+      "api": {
+        "imbokodorides": {}
+      },
+      "function": {
+        "imbokodorides72ce0758": {
+          "imbokodoRides12": "123456789"
+        }
       }
     }
   }

@@ -1,0 +1,16 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "imbokodoRides12",
+      "environmentVariableName": "imbokodoRides12"
+    },
+    {
+      "cloudFormationParameterName": "userTable",
+      "environmentVariableName": "UserTable"
+    }
+  ],
+  "secretNames": [
+    "imbokodoRides"
+  ]
+}

@@ -61,5 +61,19 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito-UserPool-Groups"
     }
+  },
+  "function": {
+    "imbokodorides281daa1d": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "imbokodorides72ce0758": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }
