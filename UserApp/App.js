@@ -8,15 +8,14 @@ import ProfileScreen from "./screens/ProfileScreen";
 import BiometricsScreen from "./screens/BiometricsScreen";
 import RidehistoryScreen from "./screens/RidehistoryScreen";
 
-import {withAuthenticator} from 'aws-amplify-react-native'
-
-import Amplify from 'aws-amplify'
-import config from './aws-exports'
-Amplify.configure(config)
+import {withAuthenticator} from 'aws-amplify-react-native';
+import Amplify from 'aws-amplify';
+import awsExports from "./src/aws-exports";
+Amplify.configure(awsExports);
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+const App =() => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding.">
@@ -61,3 +60,4 @@ export default function App() {
   );
 }
 
+export default withAuthenticator(App);
