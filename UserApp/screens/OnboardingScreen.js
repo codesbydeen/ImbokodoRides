@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Onboarding from "react-native-onboarding-swiper";
+import HomeScreen from "./HomeScreen";
 
 const Dots = ({ selected }) => {
   let backgroundColor;
@@ -31,8 +32,8 @@ const Done = ({ ...props }) => (
 const OnboardingScreen = ({ navigation }) => {
   return (
     <Onboarding
-      onSkip={() => navigation.navigate("Login")}
-      onDone={() => navigation.navigate("Login")}
+      onSkip={() => navigation.navigate(HomeScreen)}
+      onDone={() => navigation.navigate(HomeScreen)}
       DotComponent={Dots}
       DoneButtonComponent={Done}
       bottomBarColor="#ffffff"

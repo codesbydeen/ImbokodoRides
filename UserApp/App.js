@@ -4,11 +4,12 @@ import { PermissionsAndroid, Platform } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import { StatusBar } from "expo-status-bar";
+import { withAuthenticator } from "aws-amplify-react-native";
 import { Amplify } from "aws-amplify";
-import awsExports from "./src/aws-exportsorts";
+import awsExports from "./src/aws-exports";
 Amplify.configure(awsExports);
 
-export default function App() {
+const App = () => {
   //Location Permissions
   const androidPermission = async () => {
     try {
@@ -62,9 +63,9 @@ export default function App() {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
       <Router />
     </>
   );
-}
+};
 //Google API Key: AIzaSyDZ5FH-agV2WV5I5FdAQkDZ_GcrHQR45Ws
+export default withAuthenticator(App);
