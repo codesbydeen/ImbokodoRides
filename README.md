@@ -2,6 +2,20 @@
 
 Women themed e-hailing ride application.
 
+## Description
+
+I have completed my final year project which was a native mobile application. 🎉
+
+This project holds a special place in my heart as it aimed to address a crucial need for sage and reliable transportation options for female students. Recognising the challenges many face when commuting, my team and I worked diligently to create a user-friendly application that prioritises security, convenience and peace of mind.
+
+This project not only allowed me to apply my technical skills in React Native development but also instilled a sense of responsibility and empathy in me. It was truly rewarding to create a solution that addresses real-world challenges faced by female students, empowering them to navigate their journeys confidently.
+
+I would like to express my heartfelt gratitude to my amazing team members, supportive mentors, and the faculty who guided us throughout this project.
+
+I am immensely proud of the outcome and excited to leverage the knowledge gained from this project.
+
+Here’s to the successful completion of a memorable IT project!🎉🌟
+
 ## Pulling Changes
 
 Always run this command to get the latest changes from the master branch:
